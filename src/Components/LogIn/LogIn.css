@@ -1,0 +1,36 @@
+html, body{
+    height: 100%;
+}
+#button-logggg {
+    cursor: pointer;
+    width: 10rem;
+    padding: .77rem 0;
+    border-radius: 54px;
+    border-width: 0px;
+    margin-top: 1.27rem;
+    background-color: rgb(240,17,180);
+    text-align: center;
+    font-size: .83rem;
+    transition: background-color .25s;
+    color: #fff;
+    font-weight: 500;
+    outline: none;
+}
+.login{
+    background-image: url("login_background.png");
+    margin: 0;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+h2{
+    margin: 0;
+}
+.frame-login{
+    text-align: center;
+    background-color: white;
+    width: 300px;
+    height: 250px;
+    border-radius: 25px;;
+}
