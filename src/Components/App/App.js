@@ -9,7 +9,8 @@ import TrackList from "../TrackList/TrackList";
 import Spotify from "../util/Spotify";
 import {ChatEngine} from "react-chat-engine";
 import ChatFeed from "../ChatFeed/ChatFeed"
-
+import SignUp from "../SignUp/SignUp";
+import Smth from "../Smth/Smth";
 
 function App (props) {
         const [state, setState] = useState(
@@ -21,18 +22,30 @@ function App (props) {
     ]})
     const [playListName, setPlayListName] = useState('');
         const [playListTracks, setPlayListTracks] = useState( []);
-        const [user, setUser] = useState({login: 'kek', password:'123'})
+        const [users, setUsers] = useState([])
         const [logged,setLogged] = useState(false)
-        const [isChat, setIsChat] = useState(false)
+        const [whichSection, setWhichSection] = useState({
+                                                            music:true,
+                                                            chat: false,
+                                                            profile: false
+        })
         const [URI, setURI] = useState('3lE8RY6yZoGqqJeZS06u6J')
         const checkLogin =(login, password)=>{
-            if(login===user.login || password===user.password){
+            users.map((user)=>{
+            if(login===user.login && password===user.password){
                 setLogged(true)
-            }
+            }})
     }
+    const addUser =(login,password)=>{
+            if(password!=='' || login!==''){
+            setUsers([{login: login, password: password}, ...users])
+    }}
     const goToMusic =(event) =>{
             event.preventDefault();
-            setIsChat(false)
+            setWhichSection({
+                music:true,
+                chat: false,
+                profile: false})
     }
     const LogOut =(event) =>{
             event.preventDefault();
@@ -40,7 +53,17 @@ function App (props) {
     }
     const goToChat =(event)=>{
             event.preventDefault();
-            setIsChat(true);
+        setWhichSection({
+            music:false,
+            chat: true,
+            profile: false})
+    }
+    const goToProfile =(event)=>{
+        event.preventDefault();
+        setWhichSection({
+            music:false,
+            chat: false,
+            profile: true})
     }
     const addTrack =(track)=>{
             if(playListTracks.find(savedTrack=>
@@ -65,7 +88,8 @@ function App (props) {
      const changeTrack=(id) =>{
      setURI(id)
      }
-     console.log(playListTracks);
+
+     console.log(users);
         return (
             logged ?
             <div>
@@ -73,6 +97,7 @@ function App (props) {
                   <h1>Head <span className="highlight">over</span> Heels</h1>
                         <a type='button' onClick={goToChat} className='headerLink'>Chat</a>
                         <a type='button' onClick={goToMusic} className='headerLink'>Music</a>
+                        <a type='button' onClick={goToProfile} className='headerLink'>Profile</a>
                         <a type='button' onClick={LogOut} className='headerLink'>Log out</a>
                     <iframe
                         src = {`https://open.spotify.com/embed/track/${URI}`}
@@ -83,22 +108,22 @@ function App (props) {
                         allow = "encrypted-media" >
                         </iframe>
                     </header>
-                     {isChat ? <ChatEngine
+                     { whichSection.chat ? <ChatEngine
                                 height='100vh'
                                 projectID='2c06a46a-893b-4628-b545-202f7baebbed'
                                 userName='kek'
                                 userSecret='123'
-                                renderChatFeed={(chatAppProps)=><ChatFeed {...chatAppProps} />}
-                    /> :
+                                //renderChatFeed={(chatAppProps)=><ChatFeed {...chatAppProps} />}
+                    /> : whichSection.music ?
                     <div className="App">
                         <SearchBar onSearch={search} />
                         <div className="App-playlist">
                             <SearchResults searchResults={state.searchResults}  changeTrack={changeTrack} onAdd={addTrack}/>
                             <PlayList onSave={savePlaylist} playListTracks={playListTracks} playListName={playListName} onChange={updatePlaylistName} onRemove={removeTrack} />
                         </div>
-                    </div>}
+                    </div> : whichSection.profile ? <Smth /> : '' }
 
-            </div> : <LogIn checkLogin={checkLogin} />
+            </div> : <LogIn checkLogin={checkLogin} addUser={addUser}  />
         );
 
 }

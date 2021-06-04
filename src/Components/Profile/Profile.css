@@ -1,0 +1,27 @@
+.profIMG{
+    background-image: url("../Images/img.png");
+    width: 20%;
+    background-repeat: no-repeat;
+    background-size: 400px 200px;
+}
+.mainPart{
+    width: 100%;
+    max-height: 950px;
+    min-height: 400px;
+    background-color: rgba(216, 106, 171, 0.7);
+    box-shadow: 0 4px 2px 2px #000000;
+    color: white;
+}
+.profileInformation{
+    display: flex;
+    height: 200px   ;
+}
+.profile h3{
+    font-size: 40px;
+    padding-right: 1%;
+}
+.newPostInput{
+    display: flex;
+    padding-left: 20%;
+    align-items: center;
+}

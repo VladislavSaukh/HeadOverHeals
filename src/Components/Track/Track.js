@@ -21,7 +21,7 @@ function Track(props){
                     <h3>{props.track.artists}</h3>
                     <p>{props.track.name} | {props.track.album}</p>
                 </div>
-                <button onClick={handleCLick}>Play</button>
+                <a className='play-button' type='button' onClick={handleCLick}>Play</a>
                 {props.track.isRemove ? <button className="Track-action" onClick={removeTrack}>-</button> : <button className="Track-action" onClick={addTrack}>+</button>}
             </div>
         )

@@ -1,0 +1,37 @@
+.social{
+    display: flex;
+    width: 100%;
+}
+.buttonForChangeMainOfSocial{
+
+ flex-direction: column;
+    display: flex;
+    background-color: darkmagenta;
+    height: 674px;
+}
+.MainOfSocial{
+    width: 100%;
+    height: 674px;
+    overflow: scroll;
+}
+h3{
+
+}
+.changeSocialButton{
+    cursor: pointer;
+    width: 8.11rem;
+    height: 337px;
+    padding: .77rem 0;
+    background-color: #010c3f;
+    text-align: center;
+    font-size: .833rem;
+    transition: background-color .25s;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.changeSocialButton:hover{
+    background-color: rgba(108, 65, 233, .7);
+}
