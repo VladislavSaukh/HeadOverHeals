@@ -19,7 +19,7 @@ function LogIn(props){
                 <div className='frame-login'>
                     <h3></h3>
                     <h2>Welcome to the</h2>
-                    <h2>Head Over Heels</h2>
+                    <h2 className='logoname'>Head Over Heels</h2>
                     <form onSubmit={handleSubmit}>
                         <input type='text' placeholder='Phone or Email'/>
                         <input type='password' placeholder='Password'/>
