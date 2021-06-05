@@ -15,19 +15,21 @@ function LogIn(props){
     }
     return (
         isRegistration ? < SignUp  changeRegisStatus={changeRegisStatus} addUser={props.addUser}/> :
-        <div className='login'>
-            <div className='frame-login'>
-            <h2>Welcome to the Head Over Heals</h2>
-        <form onSubmit={handleSubmit}>
-        <input type='text' placeholder='Input your login'/>
-        <input type='password' placeholder='Input your password'/>
-            <div className='inputL'>
-        <button type='submit' className='button-logggg'>Log in</button>
-        <button className='button-logggg' onClick={changeRegisStatus} >Sign Up</button>
+            <div className='login'>
+                <div className='frame-login'>
+                    <h3></h3>
+                    <h2>Welcome to the</h2>
+                    <h2>Head Over Heels</h2>
+                    <form onSubmit={handleSubmit}>
+                        <input type='text' placeholder='Phone or Email'/>
+                        <input type='password' placeholder='Password'/>
+                        <div className='inputL'>
+                            <button type='submit' className='button-logggg'>Sign in</button>
+                            <button className='button-logggg' onClick={changeRegisStatus} >Sign up</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
-            </div>
-        </div>
     )
 }
 

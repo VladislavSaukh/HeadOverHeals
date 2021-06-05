@@ -3,34 +3,68 @@ html, body{
 }
 .button-logggg {
     cursor: pointer;
-    width: 10rem;
-    padding: .77rem 0;
-    border-radius: 54px;
-    border-width: 0px;
-    margin-top: 1.27rem;
-    background-color: rgb(240,17,180);
-    text-align: center;
-    font-size: .83rem;
-    transition: background-color .25s;
-    color: #fff;
-    font-weight: 500;
-    outline: none;
+    width: 110px;
+    height: 35px;
+    padding: 2px;
+    margin: 4px 6px;
+    border-radius: 50px;
+    margin-top: 8px;
+    /*text-align: center;*/
+    font-size: 14px;
+    /*font-weight: 500;*/
+    background-color: #f011b4;
+    transition-duration: 0.4s;
+    color: white;
+    font-family: 'Ubuntu Condensed', sans-serif;
 }
+
+.button-logggg:hover {
+    background-color: #6a05e7;
+    color: #e7e7e7;
+}
+
 .signUp{
     background-image: url("signup_background.png");
+    background-position: center;
     margin: 0;
     min-height: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
 }
+
 h2{
-    margin: 0;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding: 0;
+    line-height: 33px;
+    margin: 2px;
+    background: -webkit-linear-gradient(#6a05e7, #f011b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+input{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 13px;
+    width: 230px;
+    height: 30px;
+    margin: 4px;
+    border: 1px solid #f011b4;
+    border-radius: 50px;
+    background-color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 8px;
+}
+
 .frame-login{
     text-align: center;
     background-color: white;
-    width: 300px;
-    height: 300px;
-    border-radius: 25px;;
+    width: 500px;
+    height: 255px;
+    border-radius: 25px;
+    box-shadow: rgba(127, 46, 240, 0.4) 5px 5px, rgba(172, 46, 240, 0.3) 10px 10px, rgba(227, 46, 240, 0.2) 15px 15px, rgba(234, 46, 240, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+
 }
