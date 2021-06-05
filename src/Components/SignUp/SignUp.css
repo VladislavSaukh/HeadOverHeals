@@ -55,6 +55,17 @@ h2{
 }
 }
 
+.signUpWord{
+    background: linear-gradient(to right, #6a05e7 20%, #f011b4 40%, #6a05e7 60%, #6a05e7 80%);
+    background-size: 200% auto;    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2s linear infinite;
+}
+@keyframes shine { to {
+    background-position: center;
+}
+}
+
 input{
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 13px;
