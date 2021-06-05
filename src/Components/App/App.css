@@ -10,7 +10,7 @@ html {
   font-size: 18px;
 }
 header{
-  background-color: rgb(252,3,148);
+  background-color: #FC0394FF;
   display: flex;
 }
 
@@ -45,7 +45,7 @@ h2 {
 .App {
   height: 100%;
   padding: 0 17% 10% 17%;
-  background-image: url('./img.png');
+  background-image: url('./2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

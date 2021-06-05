@@ -45,15 +45,23 @@ h2{
 }
 
 .logoname {
-    background: linear-gradient(to right, #6a05e7 20%, #f011b4 40%, #6a05e7 60%, #6a05e7 80%);
-    background-size: 200% auto;    -webkit-background-clip: text;
+    text-align: center;
+
+    background: linear-gradient(to right, #6a05e7 20%, #f011b4 40%, #f011b4 60%, #6a05e7 80%);
+    background-size: 200% auto;
+
+    color: #000;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine 2s linear infinite;
+
+    animation: shine 3s linear infinite;}
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
-@keyframes shine { to {
-    background-position: center;
-}
-}
+
 
 input{
     font-family: 'Ubuntu Condensed', sans-serif;
