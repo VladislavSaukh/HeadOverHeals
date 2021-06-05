@@ -8,22 +8,23 @@ function SignUp(props){
         const password = event.target.querySelector("input[type='password']").value;
         props.addUser(login,password)
     }
-return(
-    <div className='signUp'>
-        <div className='frame-login'>
-            <h2>Welcome to the Head Over Heals</h2>
-            <form onSubmit={handleSubmit} >
-                <input type='text' placeholder='Input your username'/>
-                <input type='password' placeholder='Input your password'/>
-                <input type='password' placeholder='Repeat your password'/>
-                <div className='inputL'>
-                    <button className='button-logggg' type='submit'>Sign up</button>
-                    <button className='button-logggg' type='submit' onClick={props.changeRegisStatus}>Log in</button>
-                </div>
-            </form>
+    return(
+        <div className='signUp'>
+            <div className='frame-login'>
+                <h3></h3>
+                <h2>Sign up</h2>
+                <form onSubmit={handleSubmit} >
+                    <input type='text' placeholder='Input your username'/>
+                    <input type='password' placeholder='Input your password'/>
+                    <input type='password' placeholder='Repeat your password'/>
+                    <div className='inputL'>
+                        <button className='button-logggg' type='submit'>Sign up</button>
+                        <button className='button-logggg' type='submit' onClick={props.changeRegisStatus}>Log in</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-)
+    )
 }
 
 export default SignUp
