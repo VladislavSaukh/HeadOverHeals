@@ -28,3 +28,5 @@ function SignUp(props){
 }
 
 export default SignUp
+
+//https://drive.google.com/u/0/uc?id=1IXeEdFPblSGMZ_cpUuHIGVrVWvA6l4CE&export=download
