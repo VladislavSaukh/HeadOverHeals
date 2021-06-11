@@ -21,8 +21,8 @@ function LogIn(props){
                     <h2>Welcome to the</h2>
                     <h2 className='logoname'>Head Over Heels</h2>
                     <form onSubmit={handleSubmit}>
-                        <input type='text' placeholder='Phone or Email'/>
-                        <input type='password' placeholder='Password'/>
+                        <input type='text' className='sign-up-input' placeholder='Phone or Email'/>
+                        <input type='password' className='sign-up-input' placeholder='Password'/>
                         <div className='inputL'>
                             <button type='submit' className='button-logggg'>Sign in</button>
                             <button className='button-logggg' onClick={changeRegisStatus} >Sign up</button>

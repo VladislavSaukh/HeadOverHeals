@@ -10,7 +10,7 @@ function TrackList (props){
             <div className="TrackList">
                 {
                     props.tracks.map((track)=>{
-                    return <Track key={track.id} changeTrack={props.changeTrack} onAdd={props.onAdd} name={track.name} album={track.album} artist={track.artist} track={track}  isRemove={false} onRemove={props.onRemove} />
+                    return <Track key={track.id} changePreviewImg={props.changePreviewImg} changePreviewTitle={props.changePreviewTitle}  changePreview={props.changePreview} changeTrack={props.changeTrack} onAdd={props.onAdd} name={track.name} img={track.img} preview={track.preview_url} album={track.album}  artist={track.artist} track={track}  isRemove={false} onRemove={props.onRemove} />
                 })}
             </div>
         )

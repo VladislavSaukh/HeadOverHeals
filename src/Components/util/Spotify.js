@@ -23,13 +23,18 @@ const Spotify ={
                 if(!jsonResponse.tracks){
                     return []
                 } else {
+                    console.log('hui')
+                    console.log(jsonResponse.tracks.items)
                     return jsonResponse.tracks.items.map((item)=>({
                         id: item.id,
                         name: item.name,
                         album: item.album.name,
                         artists: item.artists[0].name,
-                        uri: item.uri
+                        uri: item.uri,
+                        preview: item.preview_url,
+                        img: item.album.images[0].url
                     }))
+     
                 }
         })
     }

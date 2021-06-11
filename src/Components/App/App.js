@@ -11,6 +11,7 @@ import {ChatEngine} from "react-chat-engine";
 import ChatFeed from "../ChatFeed/ChatFeed"
 import SignUp from "../SignUp/SignUp";
 import Smth from "../Smth/Smth";
+import MusicPlayer from '../MusicPlayer/MusicPlayer';
 
 function App (props) {
         const [state, setState] = useState(
@@ -20,6 +21,8 @@ function App (props) {
                 {name:'Кем ты стал', artists:'Oxxxymiron', album:'Горгород' , id:4,isRemove:false},
                 {name:'Слово мэра', artists:'Oxxxymiron', album:'Горгород' , id:5,isRemove:false}
     ]})
+    const [previewImg, setPreviewImg] = useState('https://i.scdn.co/image/ab67616d00001e02eb2e8ab6af66a282f6e60a7e')
+    const [previewTitle, setPreviewTitle] = useState('Cadillac')
     const [playListName, setPlayListName] = useState('');
         const [playListTracks, setPlayListTracks] = useState( []);
         const [users, setUsers] = useState([])
@@ -30,6 +33,7 @@ function App (props) {
                                                             profile: false
         })
         const [URI, setURI] = useState('3lE8RY6yZoGqqJeZS06u6J')
+        const [preview, setPreview] = useState('https://p.scdn.co/mp3-preview/567cbe5ca1d46c94e3a72347b13068b5b2851833?cid=d954ff7ee6e04e35a9f0fe3ddf6668c7')
         const checkLogin =(login, password)=>{
             users.map((user)=>{
             if(login===user.login && password===user.password){
@@ -85,11 +89,21 @@ function App (props) {
      const search=(term) =>{
         Spotify.search(term).then((searchResult)=>setState({searchResults:searchResult}))
      }
+     const changePreview =(preview_url)=>{
+         setPreview(preview_url)
+     }
      const changeTrack=(id) =>{
      setURI(id)
      }
+     const changePreviewImg=(photo)=>{
+         setPreviewImg(photo)
+     }
+     const changePreviewTitle =(title) =>{
+         setPreviewTitle(title)
+     }
 
-     console.log(users);
+     console.log(SearchResults)
+     console.log(preview)
         return (
             logged ?
             <div>
@@ -116,11 +130,14 @@ function App (props) {
                                 //renderChatFeed={(chatAppProps)=><ChatFeed {...chatAppProps} />}
                     /> : whichSection.music ?
                     <div className="App">
+                            <div className="musicPlayer">
+                        <MusicPlayer title={previewTitle}  src = {preview} img={previewImg} />
+                            </div>
                         <SearchBar onSearch={search} />
                         <div className="App-playlist">
-                            <SearchResults searchResults={state.searchResults}  changeTrack={changeTrack} onAdd={addTrack}/>
+                            <SearchResults changePreviewImg={changePreviewImg} changePreviewTitle={changePreviewTitle} changePreview={changePreview} searchResults={state.searchResults}  changeTrack={changeTrack} onAdd={addTrack}/>
                             <PlayList onSave={savePlaylist} playListTracks={playListTracks} playListName={playListName} onChange={updatePlaylistName} onRemove={removeTrack} />
-                        </div>
+                    </div>
                     </div> : whichSection.profile ? <Smth /> : '' }
 
             </div> : <LogIn checkLogin={checkLogin} addUser={addUser}  />

@@ -7,7 +7,7 @@ import TrackList from "../TrackList/TrackList";
         return(
             <div className="SearchResults">
                 <h2>Results</h2>
-               <TrackList changeTrack={props.changeTrack} tracks={props.searchResults} onAdd={props.onAdd} />
+               <TrackList changePreviewImg={props.changePreviewImg} changePreviewTitle={props.changePreviewTitle}  changePreview={props.changePreview} changeTrack={props.changeTrack} tracks={props.searchResults} onAdd={props.onAdd} />
             </div>
         )
 

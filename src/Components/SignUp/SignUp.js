@@ -14,9 +14,9 @@ function SignUp(props){
                 <h3></h3>
                 <h2 className='signUpWord'>Sign up</h2>
                 <form onSubmit={handleSubmit} >
-                    <input type='text' placeholder='Input your username'/>
-                    <input type='password' placeholder='Input your password'/>
-                    <input type='password' placeholder='Repeat your password'/>
+                    <input className="sign-up-input" type='text' placeholder='Input your username'/>
+                    <input className="sign-up-input" type='password' placeholder='Input your password'/>
+                    <input className="sign-up-input" type='password' placeholder='Repeat your password'/>
                     <div className='inputL'>
                         <button className='button-logggg' type='submit'>Sign up</button>
                         <button className='button-logggg' type='submit' onClick={props.changeRegisStatus}>Log in</button>
