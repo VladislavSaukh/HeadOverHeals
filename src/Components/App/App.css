@@ -3,8 +3,8 @@ html,
 #root {
   height: 100%;
 }
-iframe{
-  ;
+*{
+  margin: 0;
 }
 html {
   font-size: 18px;
@@ -52,6 +52,14 @@ h2 {
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
   color: #fff;
+}
+
+.musicPlayer{
+  
+  padding-top: 8%;
+  width: 50%;
+  margin-left: 25%;
+ 
 }
 
 #goToChat{
