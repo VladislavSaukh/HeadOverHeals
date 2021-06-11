@@ -1,1 +1,0 @@
-This is social network for AITU students
