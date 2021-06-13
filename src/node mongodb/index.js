@@ -14,6 +14,7 @@ const studentController = require("./controllers/studentController");
 
 
 var app = express();
+
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json();
 
@@ -63,12 +64,14 @@ console.log(Student)
 app.get("/syka", function (req, res){
     res.send("((((((((((((((((((")
 })
-app.get("/fetch",function(req, res){
+app.get("/getAllStudents",function(req, res){
     Student.find({}).then((students)=>{
         res.send(students)
     })
 })
-
+app.post('/saveuser', (req, res) => {
+    console.log('govno')
+  })
 
 
 

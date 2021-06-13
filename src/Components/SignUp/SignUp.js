@@ -12,12 +12,14 @@ function SignUp(props){
         const status = event.target.querySelector("input[placeholder='Input your status']").value;
 
         props.addUser(login, password, firstname, lastname, photo, status)
+
+        
     }
     return(
         <div className='signUp'>
             <div className='frame-login'>
                 <h3></h3>
-                <h2>Sign up</h2>
+                <h2 className='signUpWord'>Sign up</h2>
                 <form onSubmit={handleSubmit} >
                     <input className="sign-up-input" type='text' placeholder='Input your username'/>
                     <input className="sign-up-input" type='password' placeholder='Input your password'/>

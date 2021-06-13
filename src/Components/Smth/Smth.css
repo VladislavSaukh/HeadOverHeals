@@ -1,3 +1,6 @@
+.frame-for-social{
+    padding-left: 20%;
+}
 .social{
     display: flex;
     width: 100%;
@@ -14,9 +17,7 @@
     height: 674px;
     overflow: scroll;
 }
-h3{
 
-}
 .changeSocialButton{
     cursor: pointer;
     width: 8.11rem;

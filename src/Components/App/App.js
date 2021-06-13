@@ -12,11 +12,15 @@ import ChatFeed from "../ChatFeed/ChatFeed"
 import SignUp from "../SignUp/SignUp";
 import Smth from "../Smth/Smth";
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
+import chat from '../logo/chat.png';
+import music from '../logo/music.png';
+import profile from '../logo/profile.png';
+import logout from '../logo/logout.png';
+import logo from '../logo/hohloh.png';
+
 import axios from 'axios';
 
-
 function App (props) {
-    
         const [state, setState] = useState(
             {searchResults :[{name:'Где нас нет', artists:'Oxxxymiron', album:'Горгород' , id:1, isRemove:false},
                 {name:'Положение',artists:'Scryptonite',album:'17',id:2,isRemove:false},
@@ -26,21 +30,29 @@ function App (props) {
     ]})
     const [users, setUsers] = useState([])
     useEffect(()=>{
-      axios.get("/fetch").then(function(response) {
+      axios.get("/getAllStudents").then(function(response) {
        //   console.log(response.data)
        console.log(response.data)
        setUsers(response.data.map(student=>({
            id: student.id,
            login: student.username,
-           password: student.password,
-           firstname: student.firstname,
-           lastname: student.lastname,
-           photo: student. photo,
-           status: student.status
+           password: student.password
        })))
        console.log(users)
       })  
     },[])
+    useEffect(()=>{
+        axios.get("/getAllStudents").then(function(response) {
+         //   console.log(response.data)
+         console.log(response.data)
+         setUsers(response.data.map(student=>({
+             id: student.id,
+             login: student.username,
+             password: student.password
+         })))
+         console.log(users)
+        })  
+      },[users])
     console.log(users)
     const [previewImg, setPreviewImg] = useState('https://i.scdn.co/image/ab67616d00001e02eb2e8ab6af66a282f6e60a7e')
     const [previewTitle, setPreviewTitle] = useState('Cadillac')
@@ -60,9 +72,13 @@ function App (props) {
                 setLogged(true)
             }})
     }
-    const addUser =(login,password, firstname, lastname, photo, status)=>{
-            if(password!=='' && login!==''){
-            setUsers([{login: login, password: password, firstname: firstname, lastname: lastname, photo: photo, status: status}, ...users])
+    const addUser =(username,password)=>{
+            if(password!=='' && username!==''){
+                let newUser={
+                    username: username,
+                    password: password
+                }
+            axios.post('/saveuser', newUser)
     }}
     const goToMusic =(event) =>{
             event.preventDefault();
@@ -121,27 +137,28 @@ function App (props) {
      const changePreviewTitle =(title) =>{
          setPreviewTitle(title)
      }
-
-     console.log(SearchResults)
+        console.log(SearchResults)
      console.log(preview)
         return (
             logged ?
             <div>
                 <header>
-                  <h1>Head <span className="highlight">over</span> Heels</h1>
-                        <a type='button' onClick={goToChat} className='headerLink'>Chat</a>
-                        <a type='button' onClick={goToMusic} className='headerLink'>Music</a>
-                        <a type='button' onClick={goToProfile} className='headerLink'>Profile</a>
-                        <a type='button' onClick={LogOut} className='headerLink'>Log out</a>
+                    <h1 onClick={goToMusic}><img src={logo} width='70px' height='50px'/></h1>
+                    {/*<a type='button' onClick={goToMusic} className='headerLink'><img src={logo} width='50px' height='50px'/></a>*/}
+                    {/*<h1>Head <span className="highlight">over</span> Heels</h1>*/}
+                        <a type='button1' onClick={goToChat} className='headerLink1'><img src={chat} width='50px' height='50px'/></a>
+                        <a type='button2' onClick={goToMusic} className='headerLink'><img src={music} width='50px' height='50px'/></a>
+                        <a type='button3' onClick={goToProfile} className='headerLink'><img src={profile} width='50px' height='50px'/></a>
+                        <a type='button4' onClick={LogOut} className='headerLink'><img src={logout} width='50px' height='50px'/></a>
                     <iframe
                         src = {`https://open.spotify.com/embed/track/${URI}`}
-                        width = "300"
+                      width = "300"
                         height = "80"
                         frameBorder = "0"
-                        allowTransparency = "true"
-                        allow = "encrypted-media" >
-                        </iframe>
-                    </header>
+                       allowTransparency = "true"
+                       allow = "encrypted-media" >
+                       </iframe>
+                </header>
                      { whichSection.chat ? <ChatEngine
                                 height='100vh'
                                 projectID='2c06a46a-893b-4628-b545-202f7baebbed'
@@ -160,7 +177,7 @@ function App (props) {
                     </div>
                     </div> : whichSection.profile ? <Smth /> : '' }
 
-            </div> : <LogIn checkLogin={checkLogin} addUser={addUser}  />
+            </div> : <LogIn checkLogin={checkLogin} addUser={addUser}/>
         );
 
 }
