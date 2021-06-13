@@ -12,7 +12,23 @@ var userSchema = new mongoose.Schema({
     },
     isLogged: {
         type: Boolean, 
-        required: 'This fiels is reqired'
+        required: 'This field is reqired'
+    },
+    firstname:{
+        type: String,
+        required: 'This field is reqired'
+    },
+    lastname:{
+        type: String,
+        required: 'This field is reqired'
+    },
+    photo:{
+        type: String,
+        required: 'This field is reqired'
+    },
+    status:{
+        type: String,
+        required: 'This field is reqired'
     }
 }) 
 

@@ -14,6 +14,7 @@ import Smth from "../Smth/Smth";
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
 import axios from 'axios';
 
+
 function App (props) {
     
         const [state, setState] = useState(
@@ -31,7 +32,11 @@ function App (props) {
        setUsers(response.data.map(student=>({
            id: student.id,
            login: student.username,
-           password: student.password
+           password: student.password,
+           firstname: student.firstname,
+           lastname: student.lastname,
+           photo: student. photo,
+           status: student.status
        })))
        console.log(users)
       })  
@@ -55,9 +60,9 @@ function App (props) {
                 setLogged(true)
             }})
     }
-    const addUser =(login,password)=>{
-            if(password!=='' || login!==''){
-            setUsers([{login: login, password: password}, ...users])
+    const addUser =(login,password, firstname, lastname, photo, status)=>{
+            if(password!=='' && login!==''){
+            setUsers([{login: login, password: password, firstname: firstname, lastname: lastname, photo: photo, status: status}, ...users])
     }}
     const goToMusic =(event) =>{
             event.preventDefault();

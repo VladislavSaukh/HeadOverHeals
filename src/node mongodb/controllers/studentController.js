@@ -22,6 +22,10 @@ function insertRecord(req, res) {
     var student = new Student();
     student.username = req.body.username;
     student.password = req.body.password;
+    student.firstname = req.body.firstname;
+    student.lastname = req.body.lastname;
+    student.photo = req.body.photo;
+    student.status = req.body.status
     student.save((err, doc) => {
         if (!err) {
             res.redirect("student/list");
