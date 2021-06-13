@@ -15,16 +15,17 @@ const Student = require("./models/student.model.js")
 const studentController = require("./controllers/studentController");
 
 var app = express();
-console.log(Student)
 app.get("/syka", function (req, res){
     res.send("((((((((((((((((((")
 })
-app.get("/fetch",function(req, res){
+app.get("/getAllStudents",function(req, res){
     Student.find({}).then((students)=>{
         res.send(students)
     })
 })
-
+app.post('/saveuser', (req, res) => {
+    console.log('govno')
+  })
 
 
 app.use(bodyparser.urlencoded({extended: false}));
