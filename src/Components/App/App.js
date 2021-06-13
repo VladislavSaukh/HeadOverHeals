@@ -12,19 +12,15 @@ import ChatFeed from "../ChatFeed/ChatFeed"
 import SignUp from "../SignUp/SignUp";
 import Smth from "../Smth/Smth";
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
-<<<<<<< HEAD
 import chat from '../logo/chat.png';
 import music from '../logo/music.png';
 import profile from '../logo/profile.png';
 import logout from '../logo/logout.png';
 import logo from '../logo/hohloh.png';
 
-=======
 import axios from 'axios';
->>>>>>> 0d718e362ac1c1f933ad7bd4a95a9dceb4ea37a6
 
 function App (props) {
-    
         const [state, setState] = useState(
             {searchResults :[{name:'Где нас нет', artists:'Oxxxymiron', album:'Горгород' , id:1, isRemove:false},
                 {name:'Положение',artists:'Scryptonite',album:'17',id:2,isRemove:false},
@@ -141,10 +137,6 @@ function App (props) {
      const changePreviewTitle =(title) =>{
          setPreviewTitle(title)
      }
-
-     //-----------------------------------------------------------
-
-
         console.log(SearchResults)
      console.log(preview)
         return (
@@ -158,14 +150,14 @@ function App (props) {
                         <a type='button2' onClick={goToMusic} className='headerLink'><img src={music} width='50px' height='50px'/></a>
                         <a type='button3' onClick={goToProfile} className='headerLink'><img src={profile} width='50px' height='50px'/></a>
                         <a type='button4' onClick={LogOut} className='headerLink'><img src={logout} width='50px' height='50px'/></a>
-                    {/*<iframe*/}
-                    {/*    src = {`https://open.spotify.com/embed/track/${URI}`}*/}
-                    {/*    width = "300"*/}
-                    {/*    height = "80"*/}
-                    {/*    frameBorder = "0"*/}
-                    {/*    allowTransparency = "true"*/}
-                    {/*    allow = "encrypted-media" >*/}
-                    {/*    </iframe>*/}
+                    <iframe
+                        src = {`https://open.spotify.com/embed/track/${URI}`}
+                      width = "300"
+                        height = "80"
+                        frameBorder = "0"
+                       allowTransparency = "true"
+                       allow = "encrypted-media" >
+                       </iframe>
                 </header>
                      { whichSection.chat ? <ChatEngine
                                 height='100vh'
