@@ -3,14 +3,25 @@
   "name": "jummming",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
+    "@handlebars/allow-prototype-access": "^1.0.5",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+<<<<<<< HEAD
     "jquery": "^3.6.0",
     "jQuery": "^1.7.4",
+=======
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "handlebars": "^4.7.7",
+    "mongoose": "^5.12.13",
+    "path": "^0.12.7",
+>>>>>>> 0d718e362ac1c1f933ad7bd4a95a9dceb4ea37a6
     "react": "^17.0.2",
     "react-chat-engine": "^1.8.10",
     "react-dom": "^17.0.2",
@@ -44,6 +55,7 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< HEAD
   "jquery": {
           "version": "3.6.0",
         "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz",
@@ -52,5 +64,10 @@
 
 "devDependencies": {
     "gh-pages": "^3.2.0"
+=======
+  "devDependencies": {
+    "gh-pages": "^3.2.0",
+    "nodemon": "^2.0.7"
+>>>>>>> 0d718e362ac1c1f933ad7bd4a95a9dceb4ea37a6
   }
 }
