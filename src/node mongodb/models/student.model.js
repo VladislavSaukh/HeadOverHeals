@@ -9,8 +9,13 @@ var userSchema = new mongoose.Schema({
         type: String,
         required: 'This field is required'
     
+    },
+    isLogged: {
+        type: Boolean, 
+        required: 'This fiels is reqired'
     }
 }) 
+
 
 const Student=mongoose.model("Student", userSchema);
 

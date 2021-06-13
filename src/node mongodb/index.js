@@ -9,12 +9,40 @@ const exphbs = require("express-handlebars");
 const {
     allowInsecurePrototypeAccess
 } = require("@handlebars/allow-prototype-access");
-const bodyparser = require ("body-parser");
-const Student = require("./models/student.model.js")
-
+const Student = require("./models/student.model.js");
 const studentController = require("./controllers/studentController");
 
+
 var app = express();
+
+var bodyParser = require('body-parser')
+var jsonParser = bodyParser.json();
+
+
+
+/*app.post('/saveuser', jsonParser, (req, res) => {
+    console.log((req.body.username));
+    res.sendStatus(200);
+  })*/
+
+app.post('/saveuser', jsonParser, function(req, res) {
+    var savedata = new Student({
+      'username': req.body.username,
+      'password': req.body.password,
+      'isLogged': false
+    }).save(function (err, result) {
+      if (err) throw err;
+      if (result) {
+        res.json(result)
+      }
+    }) 
+  }
+  );
+
+
+console.log(Student)
+
+
 app.get("/syka", function (req, res){
     res.send("((((((((((((((((((")
 })
@@ -28,8 +56,6 @@ app.post('/saveuser', (req, res) => {
   })
 
 
-app.use(bodyparser.urlencoded({extended: false}));
-app.use(bodyparser.json());
 
 app.get("/", (req, res) => {
     res.send(`

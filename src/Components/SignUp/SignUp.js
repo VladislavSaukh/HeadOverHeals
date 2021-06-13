@@ -4,9 +4,9 @@ import './SignUp.css'
 function SignUp(props){
     const handleSubmit =(event) =>{
         event.preventDefault();
-        const login = event.target.querySelector("input[type='text']").value;
+        const username = event.target.querySelector("input[type='text']").value;
         const password = event.target.querySelector("input[type='password']").value;
-        props.addUser(login,password)
+        props.addUser(username,password)
     }
     return(
         <div className='signUp'>
