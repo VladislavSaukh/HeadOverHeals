@@ -43,17 +43,16 @@ app.post('/saveuser', jsonParser, function(req, res) {
   }
   );
 
-  router.put("/:id", (req, res) => {
-    User.findById(req.params.id, (err, foundUser) => {
-        console.log(foundUser.isLogged);
+  app.put("/govno", jsonParser, (req, res) => {
+    Student.findById(req.body.id, (err, foundStudent) => {
+        console.log(foundStudent.isLogged);
         if (err) {
             console.log(err);
-        } else if (foundUser.isLogged == false) {
-            User.update({_id: req.params.id}, {$set: {isLogged: true}});
-            res.redirect("/");
+        } else if (foundStudent.isLogged == false) {
+            console.log(req.body.id)
+            Student.updateOne({"_id": req.body.id}, {$set: {"isLogged": true}});
         } else {
-            User.update({_id: req.params.id}, {$set: {isLogged: false}});
-            res.redirect("/");
+            Student.updateOne({_id: req.body.id}, {$set: {isLogged: false}});
         }
     });
 });

@@ -72,11 +72,15 @@ function App (props) {
                 setLogged(true)
             }})
     }
-    const addUser =(username,password)=>{
+    const addUser =(username,password,firstname,lastname,photo,status)=>{
             if(password!=='' && username!==''){
                 let newUser={
                     username: username,
-                    password: password
+                    password: password,
+                    firstname: firstname,
+                    lastname: lastname,
+                    photo: photo,
+                    status: status 
                 }
             axios.post('/saveuser', newUser)
     }}
