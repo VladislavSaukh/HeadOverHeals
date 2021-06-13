@@ -3,11 +3,12 @@
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
+    border-radius: 0 50px 50px 0;
     width: 40%;
     max-height: 950px;
     padding: 2.27rem 1.16rem;
-    background-color: rgba(216, 106, 171, 0.7);
-    box-shadow: 0 4px 2px 2px #000000;
+    background-color: rgba(0, 0, 0, 0.65);
+    /*box-shadow: rgba(127, 46, 240, 0.4) 5px 5px, rgba(172, 46, 240, 0.3) 10px 10px, rgba(227, 46, 240, 0.2) 15px 15px, rgba(234, 46, 240, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;*/
 }
 
 .Playlist input {
@@ -15,30 +16,50 @@
     border: 0;
     outline: 0;
     background: transparent;
-    border-bottom: 1px solid #6f6f6f;
+    border-bottom: .5px solid #6f6f6f;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.55rem;
+    background: white;
+    /*background: linear-gradient(to right, #9445ff 20%, #ffffff 40%, #9445ff 60%, #9445ff 80%);*/
+    background-size: 200% auto;    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2s linear infinite;
+    font-size: 18px;
     color: #fff;
 }
-
 .Playlist-save {
+    /*cursor: pointer;*/
+    /*width: 10rem;*/
+    /*padding: .77rem 0;*/
+    /*border-radius: 54px;*/
+    /*border-width: 0px;*/
+    /*margin-top: 1.27rem;*/
+    /*background-color: #6c41ec;*/
+    /*text-align: center;*/
+    /*font-size: .83rem;*/
+    /*transition: background-color .25s;*/
+    /*color: #fff;*/
+    /*font-weight: 500;*/
+    /*outline: none;*/
+
     cursor: pointer;
-    width: 10rem;
-    padding: .77rem 0;
-    border-radius: 54px;
-    border-width: 0px;
-    margin-top: 1.27rem;
-    background-color: #6c41ec;
-    text-align: center;
-    font-size: .83rem;
-    transition: background-color .25s;
-    color: #fff;
-    font-weight: 500;
-    outline: none;
+    width: 110px;
+    height: 35px;
+    padding: 2px;
+    margin: 4px 6px;
+    border-radius: 50px;
+    border: none;
+    /*text-align: center;*/
+    font-size: 14px;
+    /*font-weight: 500;*/
+    background-color: #f011b4;
+    transition-duration: 0.4s;
+    color: white;
+    font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 .Playlist-save:hover {
-    background-color: rgba(108, 65, 233, .7);
+    background-color: #6a05e7;
+    color: #e7e7e7;
 }
 
 ::-webkit-scrollbar {

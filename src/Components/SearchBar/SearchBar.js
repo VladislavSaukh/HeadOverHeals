@@ -15,7 +15,5 @@ const handleTermChange =(event) =>{
                     <button type='submit' onClick={search} className="SearchButton">SEARCH</button>
             </div>
         )
-
-
 }
 export default SearchBar;

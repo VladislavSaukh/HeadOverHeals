@@ -1,11 +1,22 @@
 .SearchResults {
-    width: 40%;
-    height: 950px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow-y: scroll;
-    padding: .88rem;
-    background-color: rgba(216, 106, 171, 0.7);
-    box-shadow: 0 4px 2px 2px #000000;
+    border-radius: 50px 0 0 50px;
+    width: 60%;
+    height: 450px;
+    max-height: 950px;
+    padding: 2.27rem 1.16rem;
+    background-color: rgba(0, 0, 0, 0.65);
+    /*box-shadow: rgba(127, 46, 240, 0.4) 5px 5px, rgba(172, 46, 240, 0.3) 10px 10px, rgba(227, 46, 240, 0.2) 15px 15px, rgba(234, 46, 240, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;*/
 }
+ .SearchResults h2{
+     color: white;
+     background-color: white;
+     font-family: 'Ubuntu Condensed', sans-serif;
+
+ }
 
 ::-webkit-scrollbar {
     width: 0px;

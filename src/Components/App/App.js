@@ -12,7 +12,16 @@ import ChatFeed from "../ChatFeed/ChatFeed"
 import SignUp from "../SignUp/SignUp";
 import Smth from "../Smth/Smth";
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
+<<<<<<< HEAD
+import chat from '../logo/chat.png';
+import music from '../logo/music.png';
+import profile from '../logo/profile.png';
+import logout from '../logo/logout.png';
+import logo from '../logo/hohloh.png';
+
+=======
 import axios from 'axios';
+>>>>>>> 0d718e362ac1c1f933ad7bd4a95a9dceb4ea37a6
 
 function App (props) {
     
@@ -133,26 +142,31 @@ function App (props) {
          setPreviewTitle(title)
      }
 
-     console.log(SearchResults)
+     //-----------------------------------------------------------
+
+
+        console.log(SearchResults)
      console.log(preview)
         return (
             logged ?
             <div>
                 <header>
-                  <h1>Head <span className="highlight">over</span> Heels</h1>
-                        <a type='button' onClick={goToChat} className='headerLink'>Chat</a>
-                        <a type='button' onClick={goToMusic} className='headerLink'>Music</a>
-                        <a type='button' onClick={goToProfile} className='headerLink'>Profile</a>
-                        <a type='button' onClick={LogOut} className='headerLink'>Log out</a>
-                    <iframe
-                        src = {`https://open.spotify.com/embed/track/${URI}`}
-                        width = "300"
-                        height = "80"
-                        frameBorder = "0"
-                        allowTransparency = "true"
-                        allow = "encrypted-media" >
-                        </iframe>
-                    </header>
+                    <h1 onClick={goToMusic}><img src={logo} width='70px' height='50px'/></h1>
+                    {/*<a type='button' onClick={goToMusic} className='headerLink'><img src={logo} width='50px' height='50px'/></a>*/}
+                    {/*<h1>Head <span className="highlight">over</span> Heels</h1>*/}
+                        <a type='button1' onClick={goToChat} className='headerLink1'><img src={chat} width='50px' height='50px'/></a>
+                        <a type='button2' onClick={goToMusic} className='headerLink'><img src={music} width='50px' height='50px'/></a>
+                        <a type='button3' onClick={goToProfile} className='headerLink'><img src={profile} width='50px' height='50px'/></a>
+                        <a type='button4' onClick={LogOut} className='headerLink'><img src={logout} width='50px' height='50px'/></a>
+                    {/*<iframe*/}
+                    {/*    src = {`https://open.spotify.com/embed/track/${URI}`}*/}
+                    {/*    width = "300"*/}
+                    {/*    height = "80"*/}
+                    {/*    frameBorder = "0"*/}
+                    {/*    allowTransparency = "true"*/}
+                    {/*    allow = "encrypted-media" >*/}
+                    {/*    </iframe>*/}
+                </header>
                      { whichSection.chat ? <ChatEngine
                                 height='100vh'
                                 projectID='2c06a46a-893b-4628-b545-202f7baebbed'
@@ -171,7 +185,7 @@ function App (props) {
                     </div>
                     </div> : whichSection.profile ? <Smth /> : '' }
 
-            </div> : <LogIn checkLogin={checkLogin} addUser={addUser}  />
+            </div> : <LogIn checkLogin={checkLogin} addUser={addUser}/>
         );
 
 }

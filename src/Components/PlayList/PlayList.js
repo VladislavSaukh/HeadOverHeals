@@ -9,7 +9,7 @@ const handleChange=(event)=>{
         }
         return(
             <div className="Playlist">
-                <input defaultValue="New Playlist" onChange={handleChange} />
+                <input placeholder="New Playlist" onChange={handleChange} />
                 <TrackList playListName={props.playListName} tracks={props.playListTracks}  onRemove={props.onRemove} isRemove={true}/>
                 <button onClick={props.onSave} className="Playlist-save">SAVE</button>
             </div>
