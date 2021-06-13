@@ -12,4 +12,6 @@ var userSchema = new mongoose.Schema({
     }
 }) 
 
-mongoose.model("Student", userSchema);
+const Student=mongoose.model("Student", userSchema);
+
+module.exports = Student

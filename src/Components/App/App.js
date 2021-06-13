@@ -1,5 +1,5 @@
 import './App.css';
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import '../SearchBar/SearchBar'
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
@@ -12,8 +12,10 @@ import ChatFeed from "../ChatFeed/ChatFeed"
 import SignUp from "../SignUp/SignUp";
 import Smth from "../Smth/Smth";
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
+import axios from 'axios';
 
 function App (props) {
+    
         const [state, setState] = useState(
             {searchResults :[{name:'Где нас нет', artists:'Oxxxymiron', album:'Горгород' , id:1, isRemove:false},
                 {name:'Положение',artists:'Scryptonite',album:'17',id:2,isRemove:false},
@@ -21,11 +23,24 @@ function App (props) {
                 {name:'Кем ты стал', artists:'Oxxxymiron', album:'Горгород' , id:4,isRemove:false},
                 {name:'Слово мэра', artists:'Oxxxymiron', album:'Горгород' , id:5,isRemove:false}
     ]})
+    const [users, setUsers] = useState([])
+    useEffect(()=>{
+      axios.get("/fetch").then(function(response) {
+       //   console.log(response.data)
+       console.log(response.data)
+       setUsers(response.data.map(student=>({
+           id: student.id,
+           login: student.username,
+           password: student.password
+       })))
+       console.log(users)
+      })  
+    },[])
+    console.log(users)
     const [previewImg, setPreviewImg] = useState('https://i.scdn.co/image/ab67616d00001e02eb2e8ab6af66a282f6e60a7e')
     const [previewTitle, setPreviewTitle] = useState('Cadillac')
     const [playListName, setPlayListName] = useState('');
         const [playListTracks, setPlayListTracks] = useState( []);
-        const [users, setUsers] = useState([])
         const [logged,setLogged] = useState(false)
         const [whichSection, setWhichSection] = useState({
                                                             music:true,
