@@ -87,15 +87,15 @@ input{
     border: 2px solid #6a05e7;
 }
 
-.frame-login{
+.frame-signup{
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
     text-align: center;
     background-color: white;
-    width: 500px;
-    height: 240px;
+    width: 400px;
+    height: 370px;
     border-radius: 25px;
     box-shadow: rgba(127, 46, 240, 0.4) 5px 5px, rgba(172, 46, 240, 0.3) 10px 10px, rgba(227, 46, 240, 0.2) 15px 15px, rgba(234, 46, 240, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 

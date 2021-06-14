@@ -17,7 +17,7 @@ function SignUp(props){
     }
     return(
         <div className='signUp'>
-            <div className='frame-login'>
+            <div className='frame-signup'>
                 <h3></h3>
                 <h2 className='signUpWord'>Sign up</h2>
                 <form onSubmit={handleSubmit} >

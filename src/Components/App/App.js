@@ -41,18 +41,7 @@ function App (props) {
        console.log(users)
       })  
     },[])
-    useEffect(()=>{
-        axios.get("/getAllStudents").then(function(response) {
-         //   console.log(response.data)
-         console.log(response.data)
-         setUsers(response.data.map(student=>({
-             id: student.id,
-             login: student.username,
-             password: student.password
-         })))
-         console.log(users)
-        })  
-      },[users])
+
     console.log(users)
     const [previewImg, setPreviewImg] = useState('https://i.scdn.co/image/ab67616d00001e02eb2e8ab6af66a282f6e60a7e')
     const [previewTitle, setPreviewTitle] = useState('Cadillac')

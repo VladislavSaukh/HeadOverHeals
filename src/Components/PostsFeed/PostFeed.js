@@ -32,7 +32,7 @@ props.addNewPost(props.loggedVia.name, props.loggedVia.surname,event.target.quer
         <form style={{display: isPosting}} onSubmit={handleSubmit}>
           <textarea className="area-for-adding-post"></textarea>
           <div className="post-sumbit-button-area">
-          <button type='submit' className="post-sumbit-button">Sumbit Post</button>
+          <button type='submit' className="post-sumbit-button">Post</button>
           </div>
         </form>
       </div>

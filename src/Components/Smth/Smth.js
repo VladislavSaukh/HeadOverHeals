@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import UserInfo from '../UserInfo/UserInfo'
 import './Smth.css'
 import PostFeed from '../PostsFeed/PostFeed'
-import Image from '../Content/Elon.jpg'
+import Image from '../Profile/unknown.jpg'
 import NewsFeed from '../NewsFeed/NewsFeed'
 
 function Smth() {
@@ -44,8 +44,8 @@ const plusLike =(login, id)=>{
       <div className="frame-for-social">
     <div className='social'>
         <div className='buttonForChangeMainOfSocial'>
-            <button onClick={changeIsNewsFeedToTrue} className='changeSocialButton'>Profile</button>
-            <button onClick={changeIsNewsFeedToFalse} className='changeSocialButton'>News Feed</button>
+            <button onClick={changeIsNewsFeedToTrue} className='changeSocialButton1'>Profile</button>
+            <button onClick={changeIsNewsFeedToFalse} className='changeSocialButton2'>News Feed</button>
         </div>
         <div className='MainOfSocial'>
             {isNewsFeed ? <div> 

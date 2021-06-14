@@ -9,12 +9,12 @@ function UserInfo(props) {
          <img src={props.loggedVia.ava} alt="Avatar" />
      </div>
      <div className="user-characteristics">
-         <h3>{props.loggedVia.name} {props.loggedVia.surname}</h3>
-         <h3>Status</h3>
-         <h3>Friends</h3>
-         <h3>Mutual Friends</h3>
-         <h3>City</h3>
-         <h3>Age</h3>
+         <h3 className='imena'>{props.loggedVia.name} {props.loggedVia.surname}</h3>
+         <h3>Status:</h3>
+         <h3>Username:</h3>
+         <h3>Mutual Friends:</h3>
+         <h3>City:</h3>
+         <h3>Age:</h3>
      </div>
     </div>
   )

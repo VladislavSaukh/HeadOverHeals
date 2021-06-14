@@ -1,6 +1,6 @@
 import React from 'react'
 import './Post.css'
-import Image from '../Content/Elon.jpg'
+import Image from '../Profile/unknown.jpg'
 import { FcLike } from "react-icons/fc";
 import { BsFillHeartFill } from "react-icons/bs";
 
@@ -37,7 +37,7 @@ var datetime = + currentdate.getHours() + ":" +xz +  currentdate.getMinutes()
          <p>{props.content}</p>
      </div>
      <div className="post-footer">
-      <button type="button" className="like" onClick={handleClick}> { props.isliked? <FcLike style={{fontSize: '50px' }}  /> : <BsFillHeartFill style={{fontSize: '50px' }} />  }</button>
+      <button type="button" className="like" onClick={handleClick}> { props.isliked? <FcLike style={{fontSize: '20px' }}  /> : <BsFillHeartFill style={{fontSize: '20px' }} />  }</button>
      </div>
     </div>
   )
